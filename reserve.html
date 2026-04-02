@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>予約システム | のぶきよ耳鼻咽喉科クリニック</title>
+  <meta name="description" content="のぶきよ耳鼻咽喉科クリニックの予約のご案内。電話予約を分かりやすく。来院前の確認事項や発熱時の対応もこちらから。" />
+  <meta name="theme-color" content="#2a9d8f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --accent:#2a9d8f;
+      --accent-strong:#1f7f74;
+      --text:#1f2937;
+      --text-soft:#4b5563;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --bg-soft:#f8fafc;
+      --warn:#ffe082;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(15,23,42,.1);
+      --header-h:72px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Noto Sans JP",sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1040px,92%);margin:0 auto}
+    .skip-link{position:absolute;top:8px;left:8px;padding:10px 12px;border-radius:999px;background:#0f172a;color:#fff;transform:translateY(-140%);transition:.2s;z-index:2000;font-weight:800}
+    .skip-link:focus{transform:translateY(0)}
+    :focus-visible{outline:3px solid rgba(42,157,143,.55);outline-offset:3px;border-radius:10px}
+
+    header{
+      position:sticky;top:0;z-index:1000;
+      height:var(--header-h);
+      background:rgba(255,255,255,.98);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(8px);
+    }
+    .h-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .mark{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;background:linear-gradient(145deg,#37b8a9,#2a9d8f);box-shadow:0 8px 16px rgba(42,157,143,.3)}
+    .brand strong{display:block;white-space:nowrap}
+    .brand small{display:block;color:var(--text-soft);font-weight:500;font-size:.8rem}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{padding:10px 12px;border-radius:10px;font-weight:700}
+    .nav a:hover{background:rgba(42,157,143,.12);color:var(--accent-strong)}
+    .nav .cta{background:var(--accent);color:#fff}
+    .nav .cta:hover{background:var(--accent-strong);color:#fff}
+
+    main{padding:28px 0 72px}
+    .hero{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:linear-gradient(145deg, rgba(42,157,143,.14), rgba(15,23,42,.02));
+      padding:22px 18px;
+      box-shadow:0 12px 28px rgba(15,23,42,.08);
+    }
+    .hero h1{margin:0 0 8px;font-size:clamp(1.6rem,2.8vw,2.15rem);line-height:1.3}
+    .hero p{margin:0;color:var(--text-soft)}
+    .grid{margin-top:18px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:18px;
+      box-shadow:0 6px 16px rgba(15,23,42,.04);
+    }
+    .card h2{margin:0 0 10px;font-size:1.15rem}
+    .note{margin:0;color:var(--text-soft);font-size:.96rem}
+    .alert{
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:var(--warn);
+      border:1px solid #f3c953;
+      font-weight:800;
+    }
+    .tel{
+      display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+      margin:10px 0 0;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(42,157,143,.25);
+      background:rgba(42,157,143,.08);
+    }
+    .tel .num{font-weight:900;font-size:1.45rem;color:var(--accent-strong)}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      display:inline-block;
+      border-radius:999px;
+      padding:12px 16px;
+      font-weight:900;
+      font-size:.95rem;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s ease;
+      background:var(--accent);
+      color:#fff;
+    }
+    .btn:hover{background:var(--accent-strong);transform:translateY(-1px)}
+    .btn.ghost{
+      background:#fff;
+      color:var(--accent-strong);
+      border-color:rgba(42,157,143,.35);
+    }
+    .btn.ghost:hover{background:rgba(42,157,143,.1);transform:translateY(-1px)}
+
+    .form{
+      display:grid;
+      gap:12px;
+      margin-top:12px;
+    }
+    label{display:block;font-weight:800;font-size:.92rem;margin-bottom:6px}
+    input,select,textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid #cbd5e1;
+      font:inherit;
+      background:#fff;
+    }
+    textarea{min-height:92px;resize:vertical}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .helper{
+      margin:0;
+      color:var(--text-soft);
+      font-size:.92rem;
+    }
+    .scriptbox{
+      margin-top:12px;
+      border-radius:14px;
+      border:1px dashed rgba(42,157,143,.55);
+      background:rgba(42,157,143,.06);
+      padding:12px;
+    }
+    .scriptbox pre{
+      margin:0;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:.9rem;
+      line-height:1.55;
+      color:#0f172a;
+    }
+
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding:22px 0 32px;
+      color:var(--text-soft);
+      background:var(--bg);
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 560px){
+      .row2{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header>
+    <div class="container h-inner">
+      <a class="brand" href="index.html" aria-label="トップへ戻る">
+        <span class="mark">ENT</span>
+        <span>
+          <small>大和駅より徒歩4分</small>
+          <strong>のぶきよ耳鼻咽喉科クリニック</strong>
+        </span>
+      </a>
+      <nav class="nav" aria-label="ページ内ナビ">
+        <a href="index.html#services">診療内容</a>
+        <a href="index.html#access">アクセス</a>
+        <a class="cta" href="tel:0462408714">電話する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero" aria-label="予約案内">
+        <h1>予約のご案内</h1>
+        <p>当院は <strong>電話でのご予約</strong> を基本にご案内しています。下の入力欄に記入すると、電話で伝える内容が自動でまとまります。</p>
+      </section>
+
+      <div class="grid">
+        <section class="card" aria-label="電話予約">
+          <h2>電話予約</h2>
+          <p class="note">ご予約・ご相談：お電話で承ります。</p>
+          <div class="tel" aria-label="電話番号">
+            <span style="font-weight:800;color:#0f172a;">TEL</span>
+            <span class="num">046-240-8714</span>
+            <span style="color:var(--text-soft);font-weight:700;">（タップで発信できます）</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="tel:0462408714">電話をかける</a>
+            <button class="btn ghost" type="button" id="copyTel">番号をコピー</button>
+          </div>
+          <div class="alert">発熱のある方は、来院前に必ずお電話ください（別室でのご案内を調整します）。</div>
+        </section>
+
+        <section class="card" aria-label="伝える内容の整理">
+          <h2>電話で伝える内容（入力補助）</h2>
+          <p class="helper">入力は任意です。埋めた分だけ「伝え漏れ防止メモ」が作られます。</p>
+
+          <form class="form" id="reserveForm">
+            <div class="row2">
+              <div>
+                <label for="visitType">受診の種類</label>
+                <select id="visitType" name="visitType">
+                  <option value="">選択してください</option>
+                  <option value="初診">初診</option>
+                  <option value="再診">再診</option>
+                  <option value="相談">相談のみ（予約可否を確認したい）</option>
+                </select>
+              </div>
+              <div>
+                <label for="patient">受診される方</label>
+                <select id="patient" name="patient">
+                  <option value="">選択してください</option>
+                  <option value="本人">本人</option>
+                  <option value="お子さま">お子さま</option>
+                  <option value="家族">家族</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="prefDate">希望日</label>
+                <input id="prefDate" name="prefDate" type="date" />
+              </div>
+              <div>
+                <label for="prefTime">希望時間帯</label>
+                <select id="prefTime" name="prefTime">
+                  <option value="">選択してください</option>
+                  <option value="午前">午前</option>
+                  <option value="午後">午後</option>
+                  <option value="どちらでも">どちらでも</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="symptoms">症状・目的</label>
+              <textarea id="symptoms" name="symptoms" placeholder="例：鼻づまりが続く、花粉症の相談、いびきが気になる など"></textarea>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="fever">発熱（前日〜当日）</label>
+                <select id="fever" name="fever">
+                  <option value="">選択してください</option>
+                  <option value="なし">なし</option>
+                  <option value="あり">あり</option>
+                  <option value="不明">不明</option>
+                </select>
+              </div>
+              <div>
+                <label for="tel">折り返し用の電話番号（任意）</label>
+                <input id="tel" name="tel" inputmode="tel" placeholder="例：09012345678" />
+              </div>
+            </div>
+          </form>
+
+          <div class="scriptbox" aria-label="メモ出力">
+            <pre id="callScript">電話メモ：未入力です（入力すると自動でここにまとまります）。</pre>
+          </div>
+
+          <div class="btnrow">
+            <button class="btn" type="button" id="copyScript">メモをコピー</button>
+            <button class="btn ghost" type="button" id="resetForm">入力をリセット</button>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" style="margin-top:16px" aria-label="受診時のポイント">
+        <h2>受診時のポイント</h2>
+        <ul style="margin:10px 0 0; padding-left: 1.1rem; color: var(--text-soft);">
+          <li>初診の方は、保険証・各種医療証・お薬手帳をご持参ください。</li>
+          <li>検査内容によりお時間がかかる場合があります。余裕を持ってご来院ください。</li>
+          <li>症状が強い、息苦しい、ぐったりしているなど緊急性が高い場合は、まずお電話でご相談ください。</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="font-weight:900;color:#0f172a;">のぶきよ耳鼻咽喉科クリニック</div>
+      <div>〒242-0017 神奈川県大和市大和東1-9-25 / TEL: 046-240-8714</div>
+      <div style="margin-top:8px;font-size:.9rem;">&copy; 2026 Nobukiyo ENT Clinic.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var form = $("reserveForm");
+      var out = $("callScript");
+
+      function val(id) { return ($(id) && $(id).value || "").trim(); }
+
+      function build() {
+        var visitType = val("visitType");
+        var patient = val("patient");
+        var prefDate = val("prefDate");
+        var prefTime = val("prefTime");
+        var symptoms = val("symptoms");
+        var fever = val("fever");
+        var tel = val("tel");
+
+        var lines = [];
+        lines.push("【予約メモ】");
+        if (visitType) lines.push("・受診の種類：" + visitType);
+        if (patient) lines.push("・受診される方：" + patient);
+        if (prefDate || prefTime) lines.push("・希望：" + (prefDate || "（日付未定）") + " / " + (prefTime || "（時間帯未定）"));
+        if (symptoms) lines.push("・症状／目的：" + symptoms.replace(/\n+/g, " / "));
+        if (fever) lines.push("・発熱（前日〜当日）：" + fever);
+        if (tel) lines.push("・折り返し電話番号：" + tel);
+
+        if (lines.length === 1) {
+          out.textContent = "電話メモ：未入力です（入力すると自動でここにまとまります）。";
+          return;
+        }
+        out.textContent = lines.join("\n");
+      }
+
+      function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text);
+        }
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        return Promise.resolve();
+      }
+
+      form.addEventListener("input", build);
+      build();
+
+      $("copyTel").addEventListener("click", function () {
+        copyText("046-240-8714");
+      });
+      $("copyScript").addEventListener("click", function () {
+        copyText(out.textContent);
+      });
+      $("resetForm").addEventListener("click", function () {
+        form.reset();
+        build();
+      });
+    })();
+  </script>
+</body>
+</html>

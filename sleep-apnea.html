@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>睡眠時無呼吸症候群 | のぶきよ耳鼻咽喉科クリニック</title>
+  <meta name="description" content="睡眠時無呼吸症候群（SAS）のご案内。いびき、日中の眠気、集中力低下などが気になる方へ。検査から治療（CPAP等）までご案内します。" />
+  <meta name="theme-color" content="#2a9d8f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --accent:#2a9d8f;--accent-strong:#1f7f74;--text:#1f2937;--text-soft:#4b5563;
+      --line:#e5e7eb;--bg:#fff;--bg-soft:#f8fafc;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.1);
+      --header-h:72px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Noto Sans JP",sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1040px,92%);margin:0 auto}
+    .skip-link{position:absolute;top:8px;left:8px;padding:10px 12px;border-radius:999px;background:#0f172a;color:#fff;transform:translateY(-140%);transition:.2s;z-index:2000;font-weight:800}
+    .skip-link:focus{transform:translateY(0)}
+    :focus-visible{outline:3px solid rgba(42,157,143,.55);outline-offset:3px;border-radius:10px}
+
+    header{position:sticky;top:0;z-index:1000;height:var(--header-h);background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+    .h-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .mark{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;background:linear-gradient(145deg,#37b8a9,#2a9d8f);box-shadow:0 8px 16px rgba(42,157,143,.3)}
+    .brand strong{display:block;white-space:nowrap}
+    .brand small{display:block;color:var(--text-soft);font-weight:500;font-size:.8rem}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{padding:10px 12px;border-radius:10px;font-weight:800}
+    .nav a:hover{background:rgba(42,157,143,.12);color:var(--accent-strong)}
+    .nav .cta{background:var(--accent);color:#fff}
+    .nav .cta:hover{background:var(--accent-strong);color:#fff}
+
+    main{padding:28px 0 72px}
+    .hero{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(145deg, rgba(42,157,143,.14), rgba(15,23,42,.02));
+      padding:22px 18px;
+      box-shadow:0 12px 28px rgba(15,23,42,.08);
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+      align-items:center;
+    }
+    .hero h1{margin:0 0 8px;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.25}
+    .hero p{margin:0;color:var(--text-soft)}
+    .illus{
+      border-radius:18px;background:rgba(255,255,255,.75);
+      border:1px solid rgba(42,157,143,.18);
+      padding:14px;display:grid;place-items:center;min-height:140px;
+    }
+    .illus svg{width:min(250px,92%);height:auto;color:var(--accent-strong)}
+
+    .grid{margin-top:18px;display:grid;grid-template-columns:1fr;gap:14px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px;box-shadow:0 6px 16px rgba(15,23,42,.04)}
+    .card h2{margin:0 0 10px;font-size:1.18rem}
+    .lead{margin:0;color:var(--text-soft)}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+    ul{margin:10px 0 0;padding-left:1.1rem;color:var(--text-soft)}
+
+    .steps{counter-reset:step;display:grid;gap:10px;margin-top:10px}
+    .step{border:1px solid rgba(42,157,143,.25);background:rgba(42,157,143,.06);border-radius:14px;padding:12px}
+    .step strong{display:flex;align-items:center;gap:10px}
+    .step strong::before{
+      counter-increment:step;content:counter(step);
+      width:26px;height:26px;border-radius:999px;display:grid;place-items:center;
+      background:var(--accent);color:#fff;font-weight:900;flex-shrink:0;
+    }
+
+    details{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:#fff}
+    details summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    details summary::-webkit-details-marker{display:none}
+    .chev{width:28px;height:28px;border-radius:999px;display:grid;place-items:center;background:rgba(42,157,143,.13);color:var(--accent-strong);transition:.2s}
+    details[open] .chev{transform:rotate(180deg)}
+    .answer{margin:10px 0 0;color:var(--text-soft)}
+
+    .ctaBox{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      border:1px solid rgba(42,157,143,.3);
+      background:rgba(42,157,143,.08);
+      border-radius:18px;
+      padding:14px;
+    }
+    .ctaBox .tel{font-weight:900;color:var(--accent-strong);font-size:1.15rem}
+    .btn{display:inline-block;border-radius:999px;padding:12px 16px;font-weight:900;font-size:.95rem;transition:.2s;background:var(--accent);color:#fff}
+    .btn:hover{background:var(--accent-strong);transform:translateY(-1px)}
+    .btn.ghost{background:#fff;color:var(--accent-strong);border:1px solid rgba(42,157,143,.35)}
+    .btn.ghost:hover{background:rgba(42,157,143,.1)}
+
+    .callout{
+      margin-top:10px;
+      border-radius:14px;
+      border:1px solid rgba(42,157,143,.25);
+      background:rgba(42,157,143,.06);
+      padding:12px;
+      color:var(--text-soft);
+      font-weight:700;
+    }
+
+    footer{margin-top:18px;border-top:1px solid var(--line);padding:22px 0 32px;color:var(--text-soft);background:var(--bg)}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+    @media (max-width: 720px){.cols{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header>
+    <div class="container h-inner">
+      <a class="brand" href="index.html" aria-label="トップへ戻る">
+        <span class="mark">ENT</span>
+        <span>
+          <small>大和駅より徒歩4分</small>
+          <strong>のぶきよ耳鼻咽喉科クリニック</strong>
+        </span>
+      </a>
+      <nav class="nav" aria-label="ページ内ナビ">
+        <a href="index.html#services">診療内容</a>
+        <a href="reserve.html">予約</a>
+        <a class="cta" href="tel:0462408714">電話する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero" aria-label="睡眠時無呼吸症候群の概要">
+        <div>
+          <h1>睡眠時無呼吸症候群</h1>
+          <p>いびきや日中の眠気が続く場合、睡眠中の呼吸の状態を調べることで原因が見つかることがあります。簡易検査から始め、必要に応じて治療（CPAP等）をご案内します。</p>
+          <div class="callout">睡眠の質は、仕事・学業・健康状態に影響します。「もしかして？」の段階でもご相談ください。</div>
+        </div>
+        <div class="illus" aria-label="イラスト">
+          <svg viewBox="0 0 320 180" fill="none" aria-hidden="true">
+            <path d="M64 120c0-32 26-58 58-58h64c32 0 58 26 58 58v18H64v-18Z" stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity=".35"/>
+            <path d="M110 92c10-10 26-10 36 0" stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+            <path d="M176 92c10-10 26-10 36 0" stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+            <path d="M252 58c-6 16-20 28-36 32 16 4 30 16 36 32 6-16 20-28 36-32-16-4-30-16-36-32Z" fill="currentColor" opacity=".18"/>
+          </svg>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>こんな症状はありませんか？</h2>
+          <div class="cols">
+            <div>
+              <strong>睡眠中〜朝</strong>
+              <ul>
+                <li>いびきが大きいと言われる</li>
+                <li>呼吸が止まっていると指摘された</li>
+                <li>朝すっきり起きられない</li>
+              </ul>
+            </div>
+            <div>
+              <strong>日中</strong>
+              <ul>
+                <li>強い眠気・居眠り</li>
+                <li>集中力が続かない</li>
+                <li>疲れが取れない</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>検査〜治療の流れ</h2>
+          <p class="lead">負担の少ない方法から始めます。</p>
+          <div class="steps" aria-label="ステップ">
+            <div class="step"><strong>問診・診察</strong><div class="answer">症状、生活習慣、既往歴を伺い、必要な検査の方向性を決めます。</div></div>
+            <div class="step"><strong>簡易検査</strong><div class="answer">自宅で実施できる検査から始めることがあります（適応により異なります）。</div></div>
+            <div class="step"><strong>結果説明</strong><div class="answer">検査結果を踏まえ、重症度や治療の選択肢を分かりやすく説明します。</div></div>
+            <div class="step"><strong>治療・フォロー</strong><div class="answer">必要に応じて治療（CPAP等）をご案内し、継続のサポートを行います。</div></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>よくあるご質問</h2>
+          <div style="display:grid;gap:10px">
+            <details>
+              <summary>検査は痛いですか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+              <p class="answer">簡易検査は体への負担が少ない方法から検討します。検査の内容は事前に丁寧に説明します。</p>
+            </details>
+            <details>
+              <summary>家族にいびきを指摘されました。受診の目安は？ <span class="chev" aria-hidden="true">⌄</span></summary>
+              <p class="answer">いびきに加えて「日中の眠気」「朝のだるさ」「呼吸が止まる指摘」がある場合は早めの相談をおすすめします。</p>
+            </details>
+            <details>
+              <summary>治療はずっと続きますか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+              <p class="answer">重症度や原因により異なります。治療の目的・期間の見通しも含め、状況に合わせてご提案します。</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="ctaBox" aria-label="予約導線">
+          <div>
+            <div style="font-weight:900;">相談・予約はこちら</div>
+            <div class="tel">TEL: 046-240-8714</div>
+            <div style="color:var(--text-soft);font-weight:700;font-size:.92rem;">電話メモの作成は予約ページでできます。</div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="reserve.html">予約ページへ</a>
+            <a class="btn ghost" href="tel:0462408714">電話する</a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="font-weight:900;color:#0f172a;">のぶきよ耳鼻咽喉科クリニック</div>
+      <div>〒242-0017 神奈川県大和市大和東1-9-25 / TEL: 046-240-8714</div>
+      <div style="margin-top:8px;font-size:.9rem;">&copy; 2026 Nobukiyo ENT Clinic.</div>
+    </div>
+  </footer>
+</body>
+</html>
