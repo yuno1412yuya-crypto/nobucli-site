@@ -5,6 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>のぶきよ耳鼻咽喉科クリニック | 大和駅徒歩4分</title>
   <meta name="description" content="大和駅徒歩4分。耳鼻咽喉科一般・小児耳鼻咽喉科・めまい・補聴器相談・アレルギー性鼻炎手術・睡眠時無呼吸症候群に対応する耳鼻咽喉科クリニックです。" />
+  <meta name="theme-color" content="#2a9d8f" />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://yuno1412yuya-crypto.github.io/nobucli-site/" />
+
+  <!-- OGP / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="のぶきよ耳鼻咽喉科クリニック" />
+  <meta property="og:title" content="のぶきよ耳鼻咽喉科クリニック | 大和駅徒歩4分" />
+  <meta property="og:description" content="耳鼻咽喉科一般・小児耳鼻咽喉科・めまい・補聴器相談・アレルギー性鼻炎手術・睡眠時無呼吸症候群に対応。発熱のある方は来院前にお電話ください。" />
+  <meta property="og:url" content="https://yuno1412yuya-crypto.github.io/nobucli-site/" />
+  <meta property="og:image" content="https://yuno1412yuya-crypto.github.io/nobucli-site/assets/hero-2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data (basic) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "のぶきよ耳鼻咽喉科クリニック",
+      "medicalSpecialty": "Otolaryngologic",
+      "telephone": "+81-46-240-8714",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "242-0017",
+        "addressRegion": "神奈川県",
+        "addressLocality": "大和市",
+        "streetAddress": "大和東1-9-25",
+        "addressCountry": "JP"
+      },
+      "url": "https://yuno1412yuya-crypto.github.io/nobucli-site/",
+      "image": "https://yuno1412yuya-crypto.github.io/nobucli-site/assets/doctor.png",
+      "geo": { "@type": "GeoCoordinates", "latitude": 35.470199, "longitude": 139.4646153 },
+      "sameAs": ["https://maps.app.goo.gl/TDDGBkcpAT14xyGN6"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Friday"], "opens": "09:00", "closes": "12:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Friday"], "opens": "14:30", "closes": "18:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+      ]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
@@ -35,6 +75,33 @@
 
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
+
+    .skip-link {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #fff;
+      transform: translateY(-140%);
+      transition: transform 0.2s ease;
+      z-index: 2000;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    :focus-visible {
+      outline: 3px solid rgba(42, 157, 143, 0.55);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
 
     .container {
       width: min(1120px, 92%);
@@ -260,6 +327,70 @@
       align-content: center;
       gap: 20px;
       color: #fff;
+    }
+
+    .hero-controls {
+      position: absolute;
+      inset: auto 0 18px 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .hero-controls .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      pointer-events: auto;
+    }
+
+    .hero-nav {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: rgba(15, 23, 42, 0.28);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 0.4);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      background: transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .dot[aria-current="true"] {
+      background: #fff;
+      transform: scale(1.15);
     }
 
     .hero-copy h1 {
@@ -548,6 +679,98 @@
       transform: translateY(-2px);
     }
 
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 989;
+      border-radius: 18px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .mobile-cta .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mobile-cta a {
+      display: inline-block;
+      text-align: center;
+      padding: 12px 10px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .mobile-cta .reserve {
+      background: var(--accent);
+      color: #fff;
+    }
+    .mobile-cta .reserve:hover { background: var(--accent-strong); }
+
+    .mobile-cta .call {
+      background: #0f172a;
+      color: #fff;
+    }
+    .mobile-cta .call:hover { background: #111c33; }
+
+    /* FAQ */
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details.faq-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px 16px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    details.faq-item[open] {
+      box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    details.faq-item summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(42, 157, 143, 0.13);
+      color: var(--accent-strong);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    details.faq-item[open] .chev { transform: rotate(180deg); }
+
+    .faq-answer {
+      margin: 10px 0 0;
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
     @media (max-width: 1024px) {
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .director-wrap,
@@ -605,19 +828,13 @@
       .section { padding: 56px 0; }
       .service-grid { grid-template-columns: 1fr; }
       .card p { min-height: auto; }
-      .floating-reserve {
-        right: 12px;
-        left: 12px;
-        bottom: 12px;
-      }
-      .floating-reserve a {
-        width: 100%;
-        text-align: center;
-      }
+      .floating-reserve { display: none; }
+      .mobile-cta { display: block; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="トップへ戻る">
@@ -654,12 +871,12 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero" aria-label="メインスライダー">
       <div class="slides">
-        <div class="slide active" style="background-image:url('assets/hero-1.png')"></div>
-        <div class="slide" style="background-image:url('assets/hero-2.png')"></div>
-        <div class="slide" style="background-image:url('assets/hero-3.png')"></div>
+        <div class="slide active" role="img" aria-label="院内の様子" style="background-image:url('assets/hero-1.png')"></div>
+        <div class="slide" role="img" aria-label="クリニック外観" style="background-image:url('assets/hero-2.png')"></div>
+        <div class="slide" role="img" aria-label="イメージ写真" style="background-image:url('assets/hero-3.png')"></div>
       </div>
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -669,6 +886,15 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://example.com/reserve" target="_blank" rel="noopener noreferrer">診療予約はこちら</a>
           <a class="btn btn-secondary" href="tel:0462408714">電話でお問い合わせ</a>
+        </div>
+      </div>
+      <div class="hero-controls" aria-label="スライダー操作">
+        <div class="container">
+          <div class="hero-nav">
+            <button class="icon-btn" type="button" id="prevSlide" aria-label="前のスライド">‹</button>
+            <button class="icon-btn" type="button" id="nextSlide" aria-label="次のスライド">›</button>
+          </div>
+          <div class="dots" id="dots" aria-label="スライド選択"></div>
         </div>
       </div>
     </section>
@@ -823,6 +1049,34 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">FAQ</span>
+          <h2 class="section-title">よくあるご質問</h2>
+          <p class="section-desc">受診前の不安を減らせるよう、よくある質問をまとめました。</p>
+        </header>
+        <div class="faq" aria-label="よくある質問の一覧">
+          <details class="faq-item">
+            <summary>発熱がある場合は受診できますか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+            <p class="faq-answer">可能です。ただし感染対策のため、来院前にお電話でご連絡ください。時間調整のうえ、別室でご案内します。</p>
+          </details>
+          <details class="faq-item">
+            <summary>予約なしでも受診できますか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+            <p class="faq-answer">状況によりお待ち時間が長くなる場合があります。スムーズなご案内のため、可能な範囲でWeb予約のご利用をおすすめします。</p>
+          </details>
+          <details class="faq-item">
+            <summary>駐車場はありますか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+            <p class="faq-answer">アクセス・駐車場の詳細は本ページの「アクセス・駐車場」をご確認ください。近隣のコインパーキングもご案内できます。</p>
+          </details>
+          <details class="faq-item">
+            <summary>補聴器相談は当日できますか？ <span class="chev" aria-hidden="true">⌄</span></summary>
+            <p class="faq-answer">検査・調整が必要な場合があるため、事前にお電話でのご相談をおすすめします。</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -838,13 +1092,26 @@
     <a href="https://example.com/reserve" target="_blank" rel="noopener noreferrer">診療予約はこちら</a>
   </div>
 
+  <div class="mobile-cta" aria-label="クイック操作">
+    <div class="row">
+      <a class="reserve" href="https://example.com/reserve" target="_blank" rel="noopener noreferrer">予約</a>
+      <a class="call" href="tel:0462408714">電話</a>
+    </div>
+  </div>
+
   <script>
     (function () {
       var header = document.getElementById("siteHeader");
       var menuBtn = document.getElementById("menuBtn");
       var mainNav = document.getElementById("mainNav");
       var slides = document.querySelectorAll(".slide");
+      var prevBtn = document.getElementById("prevSlide");
+      var nextBtn = document.getElementById("nextSlide");
+      var dotsEl = document.getElementById("dots");
       var index = 0;
+      var timerId = null;
+      var intervalMs = 5000;
+      var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       function onScroll() {
         if (window.scrollY > 6) {
@@ -854,10 +1121,56 @@
         }
       }
 
-      function nextSlide() {
+      function setSlide(next) {
         slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
+        index = (next + slides.length) % slides.length;
         slides[index].classList.add("active");
+        updateDots();
+      }
+
+      function nextSlide() { setSlide(index + 1); }
+      function prevSlide() { setSlide(index - 1); }
+
+      function buildDots() {
+        if (!dotsEl) return;
+        dotsEl.innerHTML = "";
+        slides.forEach(function (_, i) {
+          var b = document.createElement("button");
+          b.className = "dot";
+          b.type = "button";
+          b.setAttribute("aria-label", (i + 1) + "枚目へ");
+          b.addEventListener("click", function () {
+            setSlide(i);
+            restartAuto();
+          });
+          dotsEl.appendChild(b);
+        });
+        updateDots();
+      }
+
+      function updateDots() {
+        if (!dotsEl) return;
+        Array.prototype.forEach.call(dotsEl.children, function (el, i) {
+          el.setAttribute("aria-current", String(i === index));
+        });
+      }
+
+      function startAuto() {
+        if (reducedMotion) return;
+        stopAuto();
+        timerId = window.setInterval(nextSlide, intervalMs);
+      }
+
+      function stopAuto() {
+        if (timerId) {
+          window.clearInterval(timerId);
+          timerId = null;
+        }
+      }
+
+      function restartAuto() {
+        if (reducedMotion) return;
+        startAuto();
       }
 
       menuBtn.addEventListener("click", function () {
@@ -878,7 +1191,19 @@
 
       window.addEventListener("scroll", onScroll);
       window.addEventListener("load", onScroll);
-      setInterval(nextSlide, 5000);
+      buildDots();
+      if (nextBtn) nextBtn.addEventListener("click", function () { nextSlide(); restartAuto(); });
+      if (prevBtn) prevBtn.addEventListener("click", function () { prevSlide(); restartAuto(); });
+
+      var hero = document.querySelector(".hero");
+      if (hero) {
+        hero.addEventListener("mouseenter", stopAuto);
+        hero.addEventListener("mouseleave", startAuto);
+        hero.addEventListener("focusin", stopAuto);
+        hero.addEventListener("focusout", startAuto);
+      }
+
+      startAuto();
     })();
   </script>
 </body>
